@@ -1,13 +1,36 @@
-$prim-color: #DCDFEB;
-$red-color: #D12F26;
-$text-active: #3C3C3B;
-$text-inactive: #B9BED1;
-$icon-inactive: #D3D4ED;
+@use "components/home";
+@use "components/sidebar/sidebar";
+@use "components/searchSideBar/searchSidebar";
+@use "components/main/main";
+@use "components/header/header";
+@use "components/movieCards/movieCard";
+@use "components/moviesSection/moviesSection";
+@use "variables" as v;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: v.$prim-color;
+
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: #3C3C3B;
+  width: 95vw;
+  height: 95vh;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
 }

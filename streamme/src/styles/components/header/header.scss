@@ -1,0 +1,49 @@
+@use "../../variables" as v;
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+
+  .header-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 200px;
+    font-weight: bold;
+    font-size: 14px;
+    color: v.$text-inactive;
+
+    &.active {
+      color: v.$text-active;
+    }
+  }
+
+  .hello-user {
+    font-size: 16px;
+    text-align: left;
+    color: v.$text-inactive;
+
+    background-image: linear-gradient(
+                    -245deg,
+                    #efefef 0%,
+                    v.$text-inactive 2%,
+                    v.$text-inactive 80%,
+                    v.$red-color 95%,
+                    v.$text-inactive 100%,
+    );
+    background-clip: border-box;
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s ease-in-out 5s infinite alternate-reverse;
+
+    @keyframes textclip {
+      to {
+        background-position: 200% 70%;
+      }
+    }
+  }
+
+}

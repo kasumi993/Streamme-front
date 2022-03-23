@@ -1,0 +1,61 @@
+@use "../../variables" as v;
+
+#sidebar {
+  width: 200px;
+  max-width: 200px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 3px solid v.$transparent-bar;
+  cursor: default;
+  #logo {
+    width: 130px;
+  }
+  .menu-container {
+    .menu-section {
+      margin-bottom: 30px;
+      padding: 0;
+      list-style: none;
+
+      .menu-section-title {
+        font-size: 14px;
+        font-weight: bold;
+        color: v.$prim-color;
+        margin-left: 11px;
+      }
+
+      .item:first-of-type {
+        margin-top: 15px;
+      }
+
+
+      .item {
+        cursor: pointer;
+        &:hover {
+          .menu-title {
+            color: v.$text-active;
+          }
+        }
+
+        .menu-title {
+          position: relative;
+          top: -5px;
+          margin: 0 0 7px 12px;
+          color: v.$text-inactive;
+          font-size: 13px;
+          font-weight: bold;
+
+          &.active {
+            color: v.$text-active;
+          }
+        }
+
+        .menu-icon {
+          width: 24px;
+          margin: 3.9px 3.4px 0 3.4px;
+        }
+      }
+    }
+  }
+}

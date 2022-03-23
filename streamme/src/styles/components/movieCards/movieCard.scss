@@ -1,0 +1,19 @@
+@use "../../variables" as v;
+
+.main-movie-card, .movie-card {
+  background-color: v.$prim-color;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.main-movie-card {
+  width: 96%;
+  height: 400px;
+}
+
+.movie-card {
+  min-width: 200px;
+  width: 200px;
+  height: 300px;
+}

@@ -1,0 +1,59 @@
+@use "../../variables" as v;
+
+.search-sidebar {
+  width: 150px;
+  max-width: 150px;
+  padding: 40px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-left: 3px solid v.$transparent-bar;
+
+  .search-input-container {
+    position: relative;
+    .search-input {
+      width: 80%;
+      border: 0;
+      border-bottom: 1px solid v.$prim-color;
+      padding-bottom: 9px;
+
+      &:focus, &:active, &:hover {
+        outline: none;
+        border: 0;
+        border-bottom: 1px solid v.$red-color;
+      }
+
+      &::placeholder {
+        color: v.$prim-color;
+      }
+    }
+
+    &::after {
+      content: url("../public/img/icons/search.svg");
+      position: absolute;
+      right: 15px;
+      display: inline-block;
+      width: 18px;
+      animation: width 1s;
+    }
+
+    &:hover, &:focus-within {
+      &::after {
+        animation: zoom ease-in-out 0.5s;
+      }
+    }
+
+
+    @keyframes zoom {
+      0% {
+        width: 18px;
+      }
+      50% {
+        width: 22px;
+      }
+      100% {
+        width: 18px;
+      }
+    }
+  }
+}

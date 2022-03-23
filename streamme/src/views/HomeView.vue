@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <sidebar-component :active="'home'" ></sidebar-component>
+    <main-component></main-component>
+    <search-sidebar></search-sidebar>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import SidebarComponent from "@/components/sidebar/Sidebar";
+import MainComponent from "@/components/Main";
+import SearchSidebar from "@/components/searchSidebar/SearchSidebar";
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    SearchSidebar,
+    MainComponent,
+    SidebarComponent,
   }
 }
 </script>
