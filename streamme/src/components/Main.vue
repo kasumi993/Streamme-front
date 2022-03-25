@@ -12,6 +12,8 @@
 import HeaderComponent from "@/components/header/Header";
 import MainMovieCard from "@/components/movieCards/mainMovieCard";
 import MoviesSection from "@/components/moviesSection/MoviesSection";
+import MoviesService from "@/services/index";
+
 export default {
   name: 'MainComponent',
   components: {MoviesSection, MainMovieCard, HeaderComponent},
@@ -62,6 +64,12 @@ export default {
         },
       ],
     }
-  }
+  },
+  mounted() {
+    MoviesService.getMovies("/movie/popular")
+    .then((data) => {
+      console.log(data);
+    })
+  },
 }
 </script>
