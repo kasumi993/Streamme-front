@@ -1,10 +1,10 @@
 <template>
   <div class="main">
     <header-component></header-component>
-    <main-movie-card></main-movie-card>
-    <movies-section :title="'Top Picks For You'" :cards="suggestedMovies" :is-slider="true"></movies-section>
-    <movies-section :title="'Continue Watching'" :cards="continueWatching" :is-slider="true"></movies-section>
-    <movies-section :title="'See Also'" :cards="suggestedMovies" :is-slider="false"></movies-section>
+    <main-movie-card :mainMovie="mainMovie"></main-movie-card>
+    <movies-section :loading="loading" :title="'Top Picks For You'" :cards="suggestedMovies" :is-slider="true"></movies-section>
+    <movies-section :loading="loading" :title="'Continue Watching'" :cards="continueWatching" :is-slider="true"></movies-section>
+    <movies-section :loading="loading" :title="'See Also'" :cards="suggestedMovies" :is-slider="false"></movies-section>
   </div>
 </template>
 
@@ -19,57 +19,50 @@ export default {
   components: {MoviesSection, MainMovieCard, HeaderComponent},
   data() {
     return {
-      continueWatching: [
-        {
-          id: 1,
-          name: 'batman',
-          description: 'some description'
-        },
-        {
-          id: 2,
-          name: 'batman',
-          description: 'some description'
-        },
-      ],
-      suggestedMovies: [
-        {
-          id: 1,
-          name: 'batman',
-          description: 'some description'
-        },
-        {
-          id: 2,
-          name: 'batman',
-          description: 'some description'
-        },
-        {
-          id: 3,
-          name: 'batman',
-          description: 'some description'
-        },
-        {
-          id: 4,
-          name: 'batman',
-          description: 'some description'
-        },
-        {
-          id: 5,
-          name: 'batman',
-          description: 'some description'
-        },
-        {
-          id: 6,
-          name: 'batman',
-          description: 'some description'
-        },
-      ],
+      loading: false,
+      continueWatching: [],
+      suggestedMovies: [],
+      mainMovie: [],
     }
   },
+  beforeMount() {
+    this.getInitialMovies();
+  },
   mounted() {
-    MoviesService.getMovies("/movie/popular")
-    .then((data) => {
-      console.log(data);
+    this.$nextTick(() => {
+      this.infiniteScroll();
     })
   },
+  methods: {
+    getMainMovie(id) {
+      MoviesService.getMovieInfo(`/movie/${id}/videos?language=en-US`)
+          .then((data) => {
+            this.mainMovie = data[0];
+            console.log(data[0]);
+          })
+    },
+    getInitialMovies() {
+      MoviesService.getMovies("/movie/popular")
+          .then((data) => {
+            this.suggestedMovies = data;
+            const movie = this.suggestedMovies[Math.floor(Math.random() * 20)];
+            this.getMainMovie(movie.id);
+          })
+    },
+    infiniteScroll() {
+      const main = document.querySelector(".main");
+      if(main) {
+        main.onscroll = () => {
+          let bottomOfWindow = (main.offsetHeight + main.scrollTop) >= main.scrollHeight;
+          if (bottomOfWindow) {
+            MoviesService.getMovies("/movie/popular")
+                .then(data => {
+                  this.suggestedMovies.push(data);
+                });
+          }
+        }
+      }
+    }
+  }
 }
 </script>

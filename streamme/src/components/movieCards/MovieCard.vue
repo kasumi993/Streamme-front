@@ -1,14 +1,24 @@
 <template>
   <div class="movie-card">
-    <div class="video-container">
-      <!--     <iframe width="720" height="405" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&mute=1&loop=1">-->
-      <!--     </iframe>-->
+    <div class="img-container">
+      <img v-if="movieCard" :src="posterPath" @click="toDetails()">
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MovieCard"
+  name: "MovieCard",
+  props: ['movieCard'],
+  computed: {
+    posterPath() {
+      return "https://image.tmdb.org/t/p/w500/" + this.movieCard.poster_path;
+    }
+  },
+  methods: {
+    toDetails() {
+      this.$router.push(`/detail/${this.movieCard.id}`);
+    }
+  },
 }
 </script>

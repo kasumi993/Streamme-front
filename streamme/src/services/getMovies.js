@@ -1,7 +1,7 @@
 import global from '../main'
 
-export default (url) => new Promise((res, rej) => {
-    global.$http.get(url)
+export default (url, pageNumber = getRandomInt(4)) => new Promise((res, rej) => {
+    global.$http.get(`${url}?page=${pageNumber}`)
         .then((response) => {
             res(response.data.results);
         })
@@ -10,3 +10,7 @@ export default (url) => new Promise((res, rej) => {
             rej(error);
         });
 })
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max + 1);
+}
