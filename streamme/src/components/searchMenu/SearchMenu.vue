@@ -1,5 +1,5 @@
 <template>
-  <div class="search-sidebar">
+  <div class="search-menu">
     <div class="search-input-container">
       <input class="search-input" type="text" placeholder="Search...">
     </div>
@@ -8,6 +8,6 @@
 
 <script>
 export default {
-  name: "SearchSidebar"
+  name: "SearchMenu"
 }
 </script>

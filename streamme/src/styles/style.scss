@@ -1,15 +1,16 @@
-@use "components/home";
 @use "components/loader";
 @use "components/sidebar/sidebar";
-@use "components/searchSideBar/searchSidebar";
+@use "components/searchMenu/searchMenu";
 @use "components/main/main";
 @use "components/header/header";
 @use "components/movieCards/movieCard";
 @use "components/moviesSection/moviesSection";
+@use "components/movieDetails/movieDetails";
 @use "overwrite";
 @use "variables" as v;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto&display=swap');
 
 body, html {
   margin: 0;
@@ -23,6 +24,12 @@ body, html {
   &::-webkit-scrollbar {
     display: none;
   }
+
+  .text {
+    font-size: 15px;
+    font-weight: bold;
+    color: v.$text-active;
+  }
 }
 
 #app {
@@ -35,4 +42,12 @@ body, html {
   margin: 0;
   padding: 20px;
   overflow: hidden;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-radius: 15px;
+  min-height: 100vh;
 }

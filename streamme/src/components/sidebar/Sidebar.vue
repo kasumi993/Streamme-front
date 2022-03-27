@@ -4,7 +4,12 @@
     <nav class="menu-container">
       <ul v-for="navItem in navItems" :key="navItem.name" class="menu-section">
         <span class="menu-section-title">{{ navItem.name }}</span>
-        <li v-for="submenuItem in navItem.content" :key="submenuItem.name" class="item" @mouseover="setActive(submenuItem)" @mouseleave="setInactive(submenuItem)">
+        <li v-for="submenuItem in navItem.content"
+            :key="submenuItem.name"
+            class="item"
+            @click="$router.push(`/${submenuItem.code}`)"
+            @mouseover="setActive(submenuItem)"
+            @mouseleave="setInactive(submenuItem)">
           <img ref="icons" class="menu-icon" :src="`/img/icons/sidebar/${submenuItem.code === active ? 'active' : 'inactive'}/${submenuItem.icon}`">
           <span class="menu-title" :class="{active: submenuItem.code === active}">{{submenuItem.name}}</span>
         </li>

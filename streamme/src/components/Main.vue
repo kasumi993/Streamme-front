@@ -34,19 +34,12 @@ export default {
     })
   },
   methods: {
-    getMainMovie(id) {
-      MoviesService.getMovieInfo(`/movie/${id}/videos?language=en-US`)
-          .then((data) => {
-            this.mainMovie = data[0];
-            console.log(data[0]);
-          })
-    },
     getInitialMovies() {
       MoviesService.getMovies("/movie/popular")
           .then((data) => {
             this.suggestedMovies = data;
             const movie = this.suggestedMovies[Math.floor(Math.random() * 20)];
-            this.getMainMovie(movie.id);
+            this.mainMovie = movie;
           })
     },
     infiniteScroll() {

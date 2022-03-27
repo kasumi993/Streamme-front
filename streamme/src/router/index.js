@@ -5,6 +5,7 @@ import DetailView from "@/views/DetailView";
 const routes = [
   {
     path: '/',
+    alias: '/home',
     name: 'home',
     component: HomeView
   },

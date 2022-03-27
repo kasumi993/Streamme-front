@@ -1,0 +1,38 @@
+@use "../../variables" as v;
+
+.detail {
+  .detail-title {
+    text-align: left;
+    margin-bottom: 2%;
+    font-size: 20px;
+    color: v.$red-color;
+    font-weight: 400;
+  }
+  .detail-synopsis {
+    display: flex;
+    justify-content: space-between;
+    margin: 2% 3%;
+    font-weight: 400;
+    color: v.$text-content;
+
+    .flex-column-container {
+      width: 47%;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          margin-top: 2%;
+
+          svg {
+            width: 15px;
+            path {
+              fill: #faaf23;
+            }
+          }
+        }
+      }
+    }
+  }
+}

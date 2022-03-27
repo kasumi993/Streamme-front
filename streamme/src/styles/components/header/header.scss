@@ -14,8 +14,9 @@
     font-weight: bold;
     font-size: 14px;
     color: v.$text-inactive;
+    cursor: pointer;
 
-    &.active {
+    span:hover, span.active {
       color: v.$text-active;
     }
   }

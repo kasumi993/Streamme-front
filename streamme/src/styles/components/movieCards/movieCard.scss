@@ -26,7 +26,22 @@
 .main-movie-card {
   width: 96%;
   height: 400px;
-  margin-bottom: 10%;
+  &.small {
+    width: 96%;
+    height: 300px;
+
+    .video-container {
+      .overlay {
+        cursor: default;
+        &:hover {
+          .overview {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
   .video-container {
     position: relative;
     width: 100%;
@@ -41,6 +56,82 @@
       bottom: 0;
       left: 0;
       right: 0;
+    }
+
+    &::after {
+      opacity: 0;
+      content: '';
+      position: absolute;
+      display: inline-block;
+      background-color: v.$prim-color;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .overlay {
+      background-image: linear-gradient(to bottom, rgba(250, 217, 221, 0.06), rgba(255, 193, 193, 0.4),rgba(2, 12, 31, 0.73), rgba(2, 12, 31, 0.73));
+      position: absolute;
+      width: 95%;
+      height: 40%;
+      z-index: 2000;
+      bottom: 0;
+      text-align: left;
+      padding-left: 5%;
+      padding-top: 5%;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      cursor: pointer;
+      transition: all 2s ease-in-out;
+      color: white;
+
+      &:hover {
+        background-image: linear-gradient(to bottom, rgba(2, 12, 31, 0.32), rgba(2, 12, 31, 0.88));
+
+        .overview {
+          display: block;
+          text-overflow: ellipsis;
+        }
+      }
+
+      .movie-title {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 30px;
+        text-transform: uppercase;
+      }
+      .overview {
+        display: none;
+        margin-top: 2%;
+        width: 90%;
+        height: 50%;
+        overflow-y: scroll;
+
+        /* width */
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          background: v.$transparent-bar;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: v.$red-color;
+          border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: #555;
+        }
+      }
     }
   }
 }
