@@ -4,7 +4,7 @@
      <div class="overlay"
           v-if="mainMovie && mainMovie.length !== 0"
           @click="$router.push(`/detail/${this.mainMovie.id}`)">
-        <div class="movie-title">{{mainMovie.original_title}}</div>
+        <div class="movie-title">{{mainMovie.title}}</div>
         <div class="overview">{{mainMovie.overview}}</div>
      </div>
      <iframe

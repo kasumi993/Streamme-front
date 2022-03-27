@@ -3,8 +3,9 @@
 @use "components/searchMenu/searchMenu";
 @use "components/main/main";
 @use "components/header/header";
-@use "components/movieCards/movieCard";
+@use "components/cards/card";
 @use "components/moviesSection/moviesSection";
+@use "components/movieDetails/castSection";
 @use "components/movieDetails/movieDetails";
 @use "overwrite";
 @use "variables" as v;

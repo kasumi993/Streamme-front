@@ -1,0 +1,21 @@
+@use "../../variables" as v;
+
+.cast-section {
+  margin: 35px 15px;
+  .section-title {
+    margin: 20px 0 20px 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: v.$text-active;
+  }
+
+  .cast-cards-container {
+    width: 100%;
+    &.grid {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+}
