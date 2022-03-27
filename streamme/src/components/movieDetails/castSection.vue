@@ -1,6 +1,6 @@
 <template>
   <div class="cast-section">
-    <div class="section-title">Cast</div>
+    <div class="section-title" v-if="cast && cast.length !== 0">Cast</div>
     <div class="cast-cards-container grid" v-if="!loading && cast && cast.length !== 0">
       <div class="cast-card" v-for="card in cast" :key="card.id">
         <div class="img-container">
