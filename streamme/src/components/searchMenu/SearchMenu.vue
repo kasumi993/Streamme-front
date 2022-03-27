@@ -45,7 +45,7 @@ export default {
         } else {
           this.searchResults = [];
         }
-      }, 1000);
+      }, 600);
     },
     fetchMovies(query) {
       MoviesService.searchMovies(query)
