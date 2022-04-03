@@ -8,7 +8,7 @@
             <div class="actor-title">{{card.name}}</div>
           </div>
           <img v-if="card.profile_path" :src="profilePath(card.profile_path)">
-          <img v-else src="/img/avatar2.png">
+          <img v-else src="/img/avatar4.png">
         </div>
       </div>
     </div>

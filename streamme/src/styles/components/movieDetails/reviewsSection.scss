@@ -1,1 +1,27 @@
 @use "../../variables" as v;
+
+.reviews-section {
+  margin: 35px 15px;
+  .section-title {
+    margin: 20px 0 20px 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: v.$text-active;
+  }
+
+  .tabs-container {
+    .no-comments {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      color: v.$text-inactive;
+      font-size: 12px;
+      img {
+        margin-bottom: 16px;
+        width: 130px;
+      }
+    }
+  }
+}

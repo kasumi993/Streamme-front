@@ -26,7 +26,7 @@
 
     </div>
     <cast-section :cast="cast"></cast-section>
-    <reviews-section></reviews-section>
+    <reviews-section :reviews="movieDetails.reviews.results"></reviews-section>
     <movies-section :title="'Similar Movies'" :cards="movieDetails.similar.results" :isSlider="true"></movies-section>
     <movies-section :title="'Recommendations'" :cards="movieDetails.recommendations.results" :isSlider="false"></movies-section>
   </div>

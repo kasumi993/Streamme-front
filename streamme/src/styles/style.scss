@@ -8,7 +8,8 @@
 @use "components/movieDetails/castSection";
 @use "components/movieDetails/movieDetails";
 @use "components/movieDetails/reviewsSection";
-@use "overwrite";
+@use "components/movieDetails/commentsCard";
+@use "components/tabs/tabs";
 @use "variables" as v;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
