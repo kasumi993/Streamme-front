@@ -1,10 +1,10 @@
 <template>
   <div class="main">
     <header-component></header-component>
+    <div class="coming-title">Reserve your seats right now and enjoy the best movies</div>
     <main-movie-card :mainMovie="mainMovie"></main-movie-card>
-    <movies-section :loading="loading" :title="'Top Picks For You'" :cards="suggestedMovies" :is-slider="true"></movies-section>
-    <movies-section :loading="loading" :title="'Continue Watching'" :cards="continueWatching" :is-slider="true"></movies-section>
-    <movies-section :loading="loading" :title="'See Also'" :cards="suggestedMovies" :is-slider="false"></movies-section>
+    <movies-section :loading="loading" :title="'For next Week'" :cards="suggestedMovies" :is-slider="true"></movies-section>
+    <movies-section :loading="loading" :title="'Coming next Month'" :cards="suggestedMovies" :is-slider="false"></movies-section>
     <content-loader v-show="loading"></content-loader>
   </div>
 </template>
@@ -17,12 +17,11 @@ import MoviesService from "@/services/index";
 import ContentLoader from "@/components/loader";
 
 export default {
-  name: 'MainComponent',
+  name: 'comingComponent',
   components: {ContentLoader, MoviesSection, MainMovieCard, HeaderComponent},
   data() {
     return {
       loading: false,
-      continueWatching: [],
       suggestedMovies: [],
       mainMovie: [],
     }

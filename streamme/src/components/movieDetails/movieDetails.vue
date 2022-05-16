@@ -23,7 +23,7 @@
     </div>
     <div class="text detail-title">Watch With</div>
     <div class="providers-container">
-
+        <img src="/img/avatar4.png" v-for="index in 5" :key="index">
     </div>
     <cast-section :cast="cast"></cast-section>
     <reviews-section :reviews="movieDetails.reviews.results"></reviews-section>

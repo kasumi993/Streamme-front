@@ -1,5 +1,15 @@
 @use "../../variables" as v;
 
+.book-btn {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  color: white;
+  font-size: 11px;
+  background-color: v.$red-color;
+  padding: 10px 20px;
+}
+
 .main-movie-card, .movie-card, cast-card {
   background-color: v.$prim-color;
   border-radius: 10px;
@@ -100,10 +110,17 @@
       }
 
       .movie-title {
+        display: inline-block;
         font-family: 'Bebas Neue', cursive;
         font-size: 30px;
         text-transform: uppercase;
       }
+
+      .book-btn {
+        margin-left: 20px;
+        top: -5px;
+      }
+
       .overview {
         display: none;
         margin-top: 2%;
@@ -145,6 +162,12 @@
     width: 100%;
     height: 100%;
     border-radius: 10px;
+  }
+}
+
+.movie-card {
+  .book-btn {
+    top: -50px;
   }
 }
 
@@ -191,3 +214,4 @@
     }
   }
 }
+

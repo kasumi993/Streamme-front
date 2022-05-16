@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import DetailView from "@/views/DetailView";
+import ComingView from "@/views/ComingView";
 
 const routes = [
   {
@@ -13,7 +14,12 @@ const routes = [
     path: '/detail/:id',
     name: 'detail',
     component: DetailView,
-  }
+  },
+  {
+    path: '/coming',
+    name: 'coming',
+    component: ComingView,
+  },
 ]
 
 const router = createRouter({

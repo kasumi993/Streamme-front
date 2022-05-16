@@ -3,6 +3,7 @@
     <div class="img-container">
       <img v-if="movieCard" :src="posterPath" @click="toDetails()">
     </div>
+    <div class="book-btn" v-if="$route.name == 'coming'">Book Now</div>
   </div>
 </template>
 

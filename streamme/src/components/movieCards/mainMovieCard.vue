@@ -5,6 +5,7 @@
           v-if="mainMovie && mainMovie.length !== 0"
           @click="$router.push(`/detail/${this.mainMovie.id}`)">
         <div class="movie-title">{{mainMovie.title}}</div>
+        <div class="book-btn" v-if="$route.name == 'coming'">Book Now</div>
         <div class="overview">{{mainMovie.overview}}</div>
      </div>
      <iframe
