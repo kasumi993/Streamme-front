@@ -70,9 +70,9 @@ export default {
           content: [
             {
               id: 5,
-              code: 'settings',
-              name: 'Settings',
-              icon: 'settings.svg',
+              code: 'contact',
+              name: 'Contact Us',
+              icon: 'contact.svg',
             },
             {
               id: 6,
