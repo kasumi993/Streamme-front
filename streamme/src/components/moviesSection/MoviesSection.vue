@@ -16,7 +16,7 @@
       <div v-if="isSlider" :class="{'slider': isSlider}">
         <movie-card v-for="index in 6" :key="index"></movie-card>
       </div>
-      <movie-card v-else v-for="index in 6" :key="index"></movie-card>
+      <movie-card v-else v-for="index in 1" :key="index"></movie-card>
     </div>
   </div>
 </template>

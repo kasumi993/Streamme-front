@@ -60,6 +60,9 @@ export default {
       MoviesService.getMovieInfo(`/movie/${id}?append_to_response=credits,images,similar,recommendations,reviews`)
           .then((data) => {
             this.movieDetails = data;
+            console.log('data');
+            console.log(data);
+            this.$store.commit('storeLastSeen', data);
             this.cast = data.credits.cast.length > 13 ? data.credits.cast.slice(0, 13) : data.credits.cast;
             console.log(data);
           })

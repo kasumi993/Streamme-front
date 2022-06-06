@@ -22,7 +22,6 @@ export default {
   data() {
     return {
       loading: false,
-      continueWatching: [],
       suggestedMovies: [],
       mainMovie: [],
     }
@@ -34,6 +33,13 @@ export default {
     this.$nextTick(() => {
       this.infiniteScroll();
     })
+  },
+  computed: {
+    continueWatching() {
+      console.log('this.$store.state.lastSeen');
+      console.log(this.$store.state.lastSeen);
+      return this.$store.state.lastSeen;
+    }
   },
   methods: {
     getInitialMovies() {
