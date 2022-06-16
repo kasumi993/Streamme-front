@@ -14,7 +14,7 @@
 
     <div class="movie-cards-container" v-if="loading || !cards || cards.length === 0" :class="`${isSlider ? 'slider-viewport' : 'grid'}`">
       <div v-if="isSlider" :class="{'slider': isSlider}">
-        <movie-card v-for="index in 6" :key="index"></movie-card>
+        <movie-card v-for="index in 1" :key="index"></movie-card>
       </div>
       <movie-card v-else v-for="index in 1" :key="index"></movie-card>
     </div>

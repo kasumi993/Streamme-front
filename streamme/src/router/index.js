@@ -3,8 +3,21 @@ import HomeView from '../views/HomeView.vue'
 import DetailView from "@/views/DetailView";
 import ComingView from "@/views/ComingView";
 import ContactView from "@/views/ContactView";
+import LoginorRegister from "@/views/LoginorRegister";
 
 const routes = [
+  {
+    path: '/login',
+    alias: '/login',
+    name: 'login',
+    component: LoginorRegister
+  },
+  {
+    path: '/register',
+    alias: '/register',
+    name: 'register',
+    component: LoginorRegister
+  },
   {
     path: '/',
     alias: '/home',

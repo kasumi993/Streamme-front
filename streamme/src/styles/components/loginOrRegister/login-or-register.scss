@@ -1,0 +1,168 @@
+@use "../../variables" as v;
+
+.login-or-register {
+  &.main-container {
+    padding: 0;
+    background-color: v.$prim-color;
+    display: flex;
+  }
+  .mixed-cards-container {
+    position: relative;
+    width: 40vw;
+    height: 100vh;
+
+    .movie-card {
+      transform: rotate(-25deg);
+      position: absolute;
+      &.card-1 {
+        top: 350px;
+        left: 300px;
+        transform: scale(1.6) rotate(-25deg);
+      }
+      &.card-2 {
+        top: -130px;
+        left: 120px;
+        transform: scale(0.7) rotate(-25deg);
+      }
+      &.card-3 {
+        top: -130px;
+        left: -50px;
+        transform: scale(0.8) rotate(-25deg);
+      }
+      &.card-5 {
+        top: 70px;
+        left: -70px;
+        transform: scale(1.2) rotate(-25deg);
+      }
+      &.card-4 {
+        top: 370px;
+        left: 70px;
+      }
+      &.card-6 {
+        top: 270px;
+        left: 150px;
+      }
+      &.card-8 {
+        top: 70px;
+        left: 250px;
+      }
+      &.card-7 {
+        top: 300px;
+        left: 280px;
+        transform: scale(1.2) rotate(-25deg);
+      }
+    }
+  }
+
+  .right {
+    width: 50vw;
+    margin-bottom: 20px;
+    z-index: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .form {
+      width: 70%;
+      height: 70%;
+      padding: 30px 30px 60px 30px;
+      border-radius: 31px;
+      background-color: #fff;
+      text-align: center;
+
+      .logo {
+        width: 27%;
+        margin-bottom: 30px;
+      }
+
+      .input-container {
+        border-radius: 5px;
+        border: 1px solid #B9BED1;
+        width: 90%;
+        height: 60px;
+        position: relative;
+        transition: 150ms ease;
+        margin: 0 5% 5% 5%;
+
+        &.warning {
+          border-color: #ee1508;
+        }
+      }
+      .input-container:focus-within {
+        border-width: 2px;
+      }
+      .input-container > input,
+      {
+        outline: none;
+        padding: 20px 10px 20px 15px;
+        background: none;
+        position: relative;
+        border: none;
+        width: 100%;
+      }
+      .input-label {
+        color: #DCDFEA;
+        font-size: 16px;
+        transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+        position: absolute;
+        left: 15px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 5px;
+        line-height: 1px;
+        pointer-events: none;
+      }
+      .input-container > input:focus ~ .input-label,
+      input:not(:placeholder-shown) ~ .input-label, {
+        color: #B9BED1;
+        background-color: #fff;
+        font-size: 12px;
+        transform: translateY(-29px);
+        padding: 0 5px;
+      }
+
+      .validate {
+        text-align: center;
+        width: 90%;
+        display: inline-block;
+        background-color: #D12F26;
+        padding: 20px 0;
+        color: white;
+        font-size: 16px;
+        margin-top: 25px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: darken(#D12F26, 5);
+        }
+        &.with-google {
+          margin-top: 20px;
+          background-color: white;
+          border: 1px solid v.$text-content;
+          color: v.$text-content;
+          padding-bottom: 15px;
+          padding-top: 7px;
+          img {
+            width: 25px;
+            position: relative;
+            top: 7px;
+            left: 5px;
+          }
+        }
+      }
+
+      .message {
+        margin: 2% 0;
+        font-size: 16px;
+
+        &.error {
+          color: #D12F26;
+          span {
+            color: orangered;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
